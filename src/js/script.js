@@ -6,6 +6,15 @@ const gameElm = document.getElementById('game'),
 			againElm = document.getElementById('btn-again'),
 			curPair = [];
 
+function shuffle(array) {
+	for (let i = array.length - 1; i > 0; i--) {
+		let j = Math.floor(Math.random() * (i + 1));
+		[array[i], array[j]] = [array[j], array[i]];
+	}
+
+	return array;
+}
+
 function resetGame(e) {
 	if(e !== undefined) e.target.hidden = true;
 
@@ -23,18 +32,15 @@ function resetGame(e) {
 	}
 
 	const arrPart = Array.from(numSet);
-	const arrFinal = arrPart.concat(
-		arrPart.slice().sort(() => Math.random() * 10 - Math.random() * 10)
-	);
 
-	for(let i of arrFinal) {
+	shuffle(arrPart.concat(arrPart)).forEach(item => {
 		const card = document.createElement('game-card');
-		card.number = i;
+		card.number = item;
 		gameElm.append(card);
-	}
+	});
 }
 
-function pickCard(e) {
+function openCard(e) {
 	const {target} = e;
 
 	if(
@@ -65,7 +71,7 @@ function pickCard(e) {
 
 customElements.define('game-card', Card);
 
-gameElm.addEventListener('click', pickCard);
-gameElm.addEventListener('keyup', pickCard, true);
+gameElm.addEventListener('click', openCard);
+gameElm.addEventListener('keyup', openCard, true);
 againElm.addEventListener('click', resetGame);
 resetGame();
