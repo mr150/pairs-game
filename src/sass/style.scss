@@ -10,6 +10,11 @@ game-card {
 	height: $card-size;
 	font-size: 42px;
 	border: solid;
+	cursor: default;
+
+	&[tabindex] {
+		cursor: pointer;
+	}
 
 	&:focus {
 		outline: auto #00f;

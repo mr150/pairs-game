@@ -27,5 +27,33 @@ function resetGame() {
 	}
 }
 
+function pickCard(e) {
+	const {target} = e;
+
+	if(
+		e.currentTarget !== target && pairsLeft && (
+			e.type == 'click' || (
+				e.type == 'keyup' && (e.code == 'Enter' || e.code == 'Space')
+			)
+		) && !target.opened
+	) {
+		if(curPair.length >= 2) {
+			if(curPair[0].number === curPair[1].number) {
+				pairsLeft--;
+			} else {
+				curPair.forEach(item => item.close());
+			}
+
+			curPair.length = 0;
+		}
+
+		target.open();
+		curPair.push(target);
+	}
+}
+
 customElements.define('game-card', Card);
+
+gameElm.addEventListener('click', pickCard);
+gameElm.addEventListener('keyup', pickCard, true);
 resetGame();
