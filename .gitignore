@@ -1,0 +1,10 @@
+src/css
+
+src/**/*.map
+
+src/js/scripts.js
+
+src/libs/**/*
+
+node_modules
+dist
