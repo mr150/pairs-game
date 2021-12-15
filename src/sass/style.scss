@@ -1,1 +1,24 @@
 @charset 'utf-8';
+
+game-card {
+	$card-size: 80px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: $card-size;
+	height: $card-size;
+	font-size: 42px;
+	border: solid;
+
+	&:focus {
+		outline: auto #00f;
+	}
+}
+
+.game {
+	display: grid;
+	grid-template-columns: repeat(var(--game-size, 4), min-content);
+	gap: 16px;
+	margin-bottom: 32px;
+}
