@@ -1,0 +1,31 @@
+{
+	"name": "new-project",
+	"version": "1.0.0",
+	"description": "Project template",
+	"scripts": {
+		"gulp": "./node_modules/gulp/bin/gulp.js",
+		"build": "./node_modules/gulp/bin/gulp.js build",
+		"compile": "./node_modules/gulp/bin/gulp.js compile"
+	},
+	"author": "mr150",
+	"license": "MIT",
+	"devDependencies": {
+		"browser-sync": "^2.27.7",
+		"del": "^6.0.0",
+		"gulp": "^4.0.2",
+		"gulp-autoprefixer": "^8.0.0",
+		"gulp-csso": "^4.0.1",
+		"gulp-plumber": "^1.2.1",
+		"gulp-pug": "^5.0.0",
+		"gulp-purgecss": "^2.3.0",
+		"gulp-rename": "^2.0.0",
+		"gulp-sass": "^5.0.0",
+		"gulp-size": "^4.0.0",
+		"gulp-sourcemaps": "^3.0.0",
+		"gulp-uglify": "^3.0.2",
+		"mlut": "^4.0.1",
+		"sass": "^1.43.4",
+		"vinyl-ftp": "^0.6.1"
+	},
+	"dependencies": {}
+}
