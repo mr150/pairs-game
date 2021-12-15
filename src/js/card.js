@@ -1,9 +1,10 @@
 export class Card extends HTMLElement {
-	number;
-
 	connectedCallback() {
 		this.textContent = '-';
 		this.tabIndex = 0;
+
+		// показывать число в атрибуте для отладки
+		this.setAttribute('data-debug', this.number);
 	}
 
 	get opened() {
