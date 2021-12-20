@@ -34,6 +34,7 @@ function resetGame(e) {
 	const arrPart = Array.from(numSet);
 
 	shuffle(arrPart.concat(arrPart)).forEach(item => {
+		// можно было использовать <button>, но кастомный элемент показался удобнее
 		const card = document.createElement('game-card');
 		card.number = item;
 		gameElm.append(card);
@@ -44,7 +45,7 @@ function openCard(e) {
 	const {target} = e;
 
 	if(
-		e.currentTarget !== target && pairsLeft && (
+		e.currentTarget !== target && (
 			e.type === 'click' || (
 				e.type === 'keyup' && (e.code === 'Enter' || e.code === 'Space')
 			)
