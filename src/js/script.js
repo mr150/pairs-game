@@ -22,16 +22,12 @@ function resetGame(e) {
 	curPair.length = 0;
 	pairsLeft = gameSize * gameSize;
 
-	const numSet = new Set(),
+	const arrPart = [],
 				numberLimit = gameSize * 2;
 
-	while(numSet.size < numberLimit) {
-		numSet.add(
-			(Math.floor(Math.random() * 10) % numberLimit) + 1
-		);
+	while(arrPart.length < numberLimit) {
+		arrPart.push(arrPart.length + 1);
 	}
-
-	const arrPart = Array.from(numSet);
 
 	shuffle(arrPart.concat(arrPart)).forEach(item => {
 		// можно было использовать <button>, но кастомный элемент показался удобнее
